@@ -1,7 +1,7 @@
 import requests
-from errors import InvalidZipError
+from .errors import InvalidZipError
 
-from config import pollen_forecast_api, pollen_forecast_api_headers
+from .config import pollen_forecast_api, pollen_forecast_api_headers
 
 def is_valid_zip_code(zip_code: str) -> bool:
     """Define whether a string ZIP code is valid."""
@@ -23,9 +23,9 @@ def get_allergy_index_for_day(day=None, zipcode='12345'):
                                      headers=pollen_forecast_api_headers)
         allergy_data = response.json()['Location']['periods']
         if day == 'today':
-            return allergy_data[0]["Index"]
-        if day == 'tomorrow':
             return allergy_data[1]["Index"]
+        if day == 'tomorrow':
+            return allergy_data[2]["Index"]
     except IndexError:
              print("none")
 

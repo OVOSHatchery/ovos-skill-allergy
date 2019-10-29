@@ -1,7 +1,7 @@
 from adapt.intent import IntentBuilder
 from mycroft.skills.core import (MycroftSkill, intent_handler, intent_file_handler)
 import requests
-from allergyrequest import get_allergy_index_for_day
+from .allergyrequest import get_allergy_index_for_day
 
 
 class AllergyLevel(MycroftSkill):
