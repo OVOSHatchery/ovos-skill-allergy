@@ -1,1 +1,1 @@
-current zipcode is {get_zip_from_ip}, tomorrow allergy level is {allergy_index_for_tomorrow}
+current zipcode is {get_zip_from_ip}, tomorrow allergy level is {allergy_index_for_tomorrow},{allergy_level_for_tomorrow}

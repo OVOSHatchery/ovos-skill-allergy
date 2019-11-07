@@ -1,7 +1,6 @@
 import requests
-from errors import InvalidZipError
-
-from config import pollen_forecast_api, pollen_forecast_api_headers
+from .errors import InvalidZipError
+from .config import pollen_forecast_api, pollen_forecast_api_headers
 
 def is_valid_zip_code(zip_code: str) -> bool:
     """Define whether a string ZIP code is valid."""
