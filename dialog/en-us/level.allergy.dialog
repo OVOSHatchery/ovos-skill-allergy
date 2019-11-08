@@ -1,0 +1,2 @@
+The allergy level for {day} is {allergy_index} or {allergy_level}
+The allergies {day} are {allergy_level} or {allergy_index}

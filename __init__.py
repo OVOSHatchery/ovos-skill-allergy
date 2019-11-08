@@ -19,13 +19,18 @@ class AllergyLevel(MycroftSkill):
     @intent_file_handler("level.allergy.today.intent")
     def handle_level_allergy_today_intent(self, message):
         allergy_index_for_today, allergy_level_for_today = get_allergy_index_for_day(day='today', zipcode=self.zipcode)
-        self.speak_dialog("level.allergy.today", {"allergy_index_for_today": allergy_index_for_today, "allergy_level_for_today":allergy_level_for_today, "zipcode":self.zipcode})
+        self.speak_dialog("level.allergy", {"allergy_index": allergy_index_for_today,
+                                            "allergy_level":allergy_level_for_today,
+                                            "zipcode": self.zipcode, "day": "today"})
+
         pass
 
     @intent_file_handler("level.allergy.tomorrow.intent")
     def handle_level_allergy_tomorrow_intent(self, message):
         allergy_index_for_tomorrow, allergy_level_for_tomorrow = get_allergy_index_for_day(day='tomorrow', zipcode=self.zipcode)
-        self.speak_dialog("level.allergy.tomorrow", {"allergy_index_for_tomorrow": allergy_level_for_tomorrow, "allergy_level_for_tomorrow": allergy_index_for_tomorrow, "zipcode":self.zipcode})
+        self.speak_dialog("level.allergy", {"allergy_index": allergy_index_for_tomorrow,
+                                            "allergy_level": allergy_level_for_tomorrow,
+                                            "zipcode":self.zipcode, "day": "tomorrow"})
 
 
     def stop(self):
