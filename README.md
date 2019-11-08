@@ -3,14 +3,12 @@ Allergy report for my husband David
 
 ## About
 
-Everyday, mycroft will send an allergy level report base on your zipcode to you for being aware of the air quality. 
-When you ask how are the allergies today/tomorrow, it tells you the digit number of the allergies and allergy levels for today/tomorrow
-Will use IP Address to determining the current address(if you use VPN, it doesn't work) 
+With this skill users will be able to inquire what the allergy level will be for either today or tomorrow.
+The results are pulled from pollen.com
+The skill uses the mycrofts IP Address to determining the zip code(if you use VPN, it doesn't provide the correct reults)
 ## Examples
-* "How's the allergy today"
-* "What's the allergy level today"
-* "Will i feel bad today?"
-* "Do i need to be aware of the allergy for tomorrow"
+* how are the allergies today
+* What's the allergy level tomorrow
 
 ## Credits
 Muge Niu
