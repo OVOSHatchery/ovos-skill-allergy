@@ -1,5 +1,5 @@
 {
     "expected_dialog": "level.allergy",
-    "intent_type": "level.allergy.intent",
-    "utterance": "How's the allergy today"
+    "intent_type": "level.allergy.today.intent",
+    "utterance": "how are the allergies today"
 }

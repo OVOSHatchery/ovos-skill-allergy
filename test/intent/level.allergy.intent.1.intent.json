@@ -1,0 +1,5 @@
+{
+    "expected_dialog": "level.allergy",
+    "intent_type": "level.allergy.tomorrow.intent",
+    "utterance": "What's the allergy level today"
+}
