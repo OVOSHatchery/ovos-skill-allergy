@@ -1,3 +1,2 @@
 requests
-adapt.intent
-mycroft.skills.core
+
