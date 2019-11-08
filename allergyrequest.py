@@ -13,13 +13,13 @@ def convert_allergy_index_to_level(index=0):
     level = ''
     if index < 2:
         level = "low"
-    if 2<= index<4:
+    if 2 <= index< 4:
         level = "low-medium"
-    if 4<= index <6:
+    if 4 <= index < 6:
         level = "medium"
-    if 6<= index<8:
+    if 6 <= index < 8:
         level = "medium-high"
-    if index >8:
+    if index > 8:
         level = "high"
     return level
 

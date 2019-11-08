@@ -1,2 +1,3 @@
-The allergy level for {day} is {allergy_index}, {allergy_level}
-The allergies {day} are {allergy_level}, {allergy_index}
+The allergy level for {day} is {allergy_index} and {allergy_level}
+The allergies {day} are {allergy_level} and {allergy_index}
+
