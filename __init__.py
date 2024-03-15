@@ -1,10 +1,10 @@
-from mycroft.skills.core import (MycroftSkill, intent_handler, intent_file_handler)
+from ovos_workshop.skills import OVOSSkill
+from ovos_workshop.decorators import intent_handler
 from .zipcoderequest import get_zip_from_ip, get_my_ip
 from .allergyrequest import get_allergy_index_for_day
 
-class AllergyLevel(MycroftSkill):
-    def __init__(self):
-        MycroftSkill.__init__(self)
+
+class AllergyLevel(OVOSSkill):
 
     def initialize(self):
         self.zipcode = self.settings.get('zipcode')
@@ -14,7 +14,7 @@ class AllergyLevel(MycroftSkill):
             self.settings['zipcode'] = self.zipcode
 
 
-    @intent_file_handler('level.allergy.today.intent')
+    @intent_handler('level.allergy.today.intent')
     def handle_level_allergy_today_intent(self, message):
         allergy_index_for_today, allergy_level_for_today = get_allergy_index_for_day(day='today', zipcode=self.zipcode)
         self.speak_dialog('level.allergy', {"allergy_index": allergy_index_for_today,
@@ -23,7 +23,7 @@ class AllergyLevel(MycroftSkill):
 
         pass
 
-    @intent_file_handler('level.allergy.tomorrow.intent')
+    @intent_handler('level.allergy.tomorrow.intent')
     def handle_level_allergy_tomorrow_intent(self, message):
         allergy_index_for_tomorrow, allergy_level_for_tomorrow = get_allergy_index_for_day(day='tomorrow', zipcode=self.zipcode)
         self.speak_dialog('level.allergy', {"allergy_index": allergy_index_for_tomorrow,
@@ -31,9 +31,3 @@ class AllergyLevel(MycroftSkill):
                                             "zipcode": self.zipcode, "day": "tomorrow"})
 
 
-    def stop(self):
-        pass
-
-
-def create_skill():
-    return AllergyLevel()
